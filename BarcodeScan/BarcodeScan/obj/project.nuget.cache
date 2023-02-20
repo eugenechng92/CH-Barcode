@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "AuVUqpPb06a/TqlZ1Qq7DYO3VZ1eT2j5CFMa8CTI3gryBpSBtQEzKvn9v8Y4JzPSBnPv9ry1k+cccm0yNEebEw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Eugene\\Desktop\\Business\\BarcodeScan\\BarcodeScan\\BarcodeScan\\BarcodeScan.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Eugene\\.nuget\\packages\\fontawesome.sharp\\6.2.1\\fontawesome.sharp.6.2.1.nupkg.sha512"
+  ],
+  "logs": []
+}

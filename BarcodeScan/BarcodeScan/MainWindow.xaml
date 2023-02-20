@@ -1,0 +1,171 @@
+﻿<Window x:Class="BarcodeScan.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BarcodeScan"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        mc:Ignorable="d" Height="740" Width="1280" WindowStartupLocation="CenterScreen"
+        MinHeight="740" MaxHeight="740" MinWidth="1280" MaxWidth="1280"
+
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="511*"/>
+            <ColumnDefinition Width="519*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Left Panel-->
+        <Border CornerRadius="10 0 0 10">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5, 1">
+                    <GradientStop Color ="#223266"  Offset="0"/>
+                    <GradientStop Color ="#27396b"  Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <StackPanel>
+                <!--Program Name-->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 35 0 0">
+                    <Border CornerRadius="10" Width="40" Height="40">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1, 2">
+                                <GradientStop Color ="#7F7CF1"  Offset="0"/>
+                                <GradientStop Color ="#D3B7FF"  Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Image Source="C:/Users/Eugene/Desktop/Business/BarcodeScan/IMAGE/2DBARCODE.jpg"  Margin="5,5,5,5"/>
+                    </Border>
+
+                    <StackPanel Margin=" 10 0 0 0" VerticalAlignment="Center">
+                        <TextBlock Text="Barcode Logging APP" FontSize="15" Margin="0 0 0 5" Foreground="#c2cfff"/>
+                        <TextBlock Text="Beta 1.0" FontSize="11" Margin="0 0 0 5" Foreground="#7788bf"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <Separator Height="0.8" Margin="20 30 " Background="#46558a"/>
+
+                <!--Menu Button-->
+                <Button Style="{StaticResource menuButtonActive}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Dashboard" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource menuButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Cog" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Settings" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </Button>
+
+
+            </StackPanel>
+        </Border>
+        <!--Main Section-->
+        <Border Grid.Column="1" CornerRadius="0 10 10 0" MouseDown="Border_MouseDown" Grid.ColumnSpan="2">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0, 1">
+                    <GradientStop Color ="#41518f"  Offset="0"/>
+                    <GradientStop Color ="#2c386c"  Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="685"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" MinHeight="34"/>
+                    <RowDefinition Height="54*"/>
+                    <RowDefinition Height="170*"/>
+                    <RowDefinition Height="112*"/>
+                    <RowDefinition Height="12*"/>
+                </Grid.RowDefinitions>
+
+
+
+                <!--==Top Menu-->
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 30 20" Height="0" Width="0">
+
+                    <!--currently empty-->
+                </StackPanel>
+
+                <!--Title-->
+                <TextBlock Text="Barcode Logging App" FontSize="26" Foreground="#ccd7ff" HorizontalAlignment="Left" Margin="29,19,0,0" Width="249" Height="34" VerticalAlignment="Top" Grid.Row="1"/>
+                <!--Info Card-->
+                <Grid Grid.Row="2" Margin="0,0,0,24">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="103*"/>
+                        <RowDefinition Height="213*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="463*"/>
+                        <ColumnDefinition Width="222*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border CornerRadius="20" Margin="10,0,13,-10" Grid.ColumnSpan="2" Grid.RowSpan="2" Height="331" VerticalAlignment="Bottom" >
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#827BFF" Offset="0"/>
+                                <GradientStop Color="#D9B5FF" Offset="1"/>
+                            </LinearGradientBrush>
+
+                        </Border.Background>
+                    </Border>
+                    <TextBlock Text="Total Part Number Scanned" Style="{StaticResource titleText}" Margin="0,0,0,30" Width="306" />
+
+                    <TextBlock Text="10" Style="{StaticResource ScanText}" FontSize="100" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,10,-21" />
+                </Grid>
+                <Grid Grid.Row="2" Margin="0,281,0,3" Grid.RowSpan="2">
+                    <Border CornerRadius="20" Margin="10,65,10,10" Width="660" Height="214">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#FF708090" Offset="0"/>
+                                <GradientStop Color="#FFD3D3D3" Offset="1"/>
+                            </LinearGradientBrush>
+
+                        </Border.Background>
+                    </Border>
+
+                    <TextBlock Text="Current Part Number" Style="{StaticResource titleText}" Width="255" Margin="10,68,0,156"/>
+                    <TextBlock  Style="{StaticResource ScanText}" Margin="10,155,10,17" Name="BarcodeScan">
+                            Barcode Scanned
+                    </TextBlock>
+
+
+
+
+                </Grid>
+                <Grid Grid.Row="3" Margin="0,220,0,3" Grid.RowSpan="3" >
+                    <TextBox Style="{StaticResource TextBoxS}" Name="InputTextbox"  KeyDown="OnKeyDownHandler" Margin="19,2,-324,2" />
+                </Grid>
+                <Border Grid.Column="1" CornerRadius="20" Padding="0 15" Background="#243771" Margin="5,0,15,10" Grid.Row="2" Grid.RowSpan="2" Width="325" Height="560">
+                    <StackPanel Name="LastScanned" HorizontalAlignment="Center" Height="547" Margin="0,-5,0,0" VerticalAlignment="Top" Width="325">
+                        <TextBlock  Style="{StaticResource titleText}" Height="48" Margin="3,0,0,0" Padding="15" TextWrapping="Wrap" Width="286" ><Run Text="Last Scanned"/></TextBlock>
+                        <TextBlock Name="LastScanned1" Style="{StaticResource LastScanText}" Height="48" Margin="0,0,0,0" Padding="15" TextWrapping="Wrap" VerticalAlignment="Top" Width="286" ><Run Text="Previous Scanned Barcode"/></TextBlock>
+                        <TextBlock Name="LastScanned2" Style="{StaticResource LastScanText}" Height="48" Margin="0,0,0,0" Padding="15" TextWrapping="Wrap" VerticalAlignment="Top" Width="286" ><Run Text="Previous Scanned Barcode"/></TextBlock>
+                        <TextBlock Name="LastScanned3" Style="{StaticResource LastScanText}" Height="48" Margin="0,0,0,0" Padding="15" TextWrapping="Wrap" VerticalAlignment="Top" Width="286" ><Run Text="Previous Scanned Barcode"/></TextBlock>
+                        <TextBlock Name="LastScanned4" Style="{StaticResource LastScanText}" Height="48" Margin="0,0,0,0" Padding="15" TextWrapping="Wrap" VerticalAlignment="Top" Width="286" ><Run Text="Previous Scanned Barcode"/></TextBlock>
+                        <TextBlock Name="LastScanned5" Style="{StaticResource LastScanText}" Height="48" Margin="0,0,0,0" Padding="15" TextWrapping="Wrap" VerticalAlignment="Top" Width="286" ><Run Text="Previous Scanned Barcode"/></TextBlock>
+                        <TextBlock Name="LastScanned6" Style="{StaticResource LastScanText}" Height="48" Margin="0,0,0,0" Padding="15" TextWrapping="Wrap" VerticalAlignment="Top" Width="286" ><Run Text="Previous Scanned Barcode"/></TextBlock>
+                        <TextBlock Name="LastScanned7" Style="{StaticResource LastScanText}" Height="48" Margin="0,0,0,0" Padding="15" TextWrapping="Wrap" VerticalAlignment="Top" Width="286" ><Run Text="Previous Scanned Barcode"/></TextBlock>
+                        <TextBlock Name="LastScanned8" Style="{StaticResource LastScanText}" Height="48" Margin="0,0,0,0" Padding="15" TextWrapping="Wrap" VerticalAlignment="Top" Width="286" ><Run Text="Previous Scanned Barcode"/></TextBlock>
+                        <TextBlock Name="LastScanned9" Style="{StaticResource LastScanText}" Height="48" Margin="0,0,0,0" Padding="15" TextWrapping="Wrap" VerticalAlignment="Top" Width="286" ><Run Text="Previous Scanned Barcode"/></TextBlock>
+                        <TextBlock Name="LastScanned10" Style="{StaticResource LastScanText}" Height="48" Margin="0,0,0,0" Padding="15" TextWrapping="Wrap" VerticalAlignment="Top" Width="286" ><Run Text="Previous Scanned Barcode"/></TextBlock>
+                    </StackPanel>
+                </Border>
+                <Button Style="{StaticResource ExitButton}" Content="X" FontSize="20" FontWeight="Bold" Grid.Column="1" Margin="285,14,20,88" Grid.RowSpan="2" Click="Button_Click" />
+
+
+            </Grid>
+        </Border>
+
+    </Grid>
+
+</Window>
